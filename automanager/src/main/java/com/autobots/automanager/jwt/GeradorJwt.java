@@ -19,4 +19,4 @@ class GeradorJwt {
 				.signWith(SignatureAlgorithm.HS512, this.assinatura.getBytes()).compact();
 		return jwt;
 	}
-}
+}//gera o token jwt, esses arquivos todos da pasta jwt sao pra autenticacao

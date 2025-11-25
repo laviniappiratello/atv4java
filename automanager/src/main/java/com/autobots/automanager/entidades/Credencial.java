@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @SuppressWarnings("serial")
@@ -21,6 +23,7 @@ public class Credencial implements Serializable{
 	@Column(nullable = false, unique = true)
 	private String nomeUsuario;
 	
+	@JsonIgnore  // por algum motivo tava mostrando a senha (criptografada) mas o json ignore oculta isso na resposta, é o ideal? nao sei
 	@Column(nullable = false)
 	private String senha;
 }
